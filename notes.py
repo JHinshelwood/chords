@@ -8,7 +8,7 @@ def signal_handler(signal, frame):
 
 signal.signal(signal.SIGINT, signal_handler)
 
-notes = ["C", "Db", "D", "Eb", "E", "F", "F#", "Gb", "G", "Ab", "A", "Bb", "B"]
+notes = ["C", "Db", "D", "Eb", "E", "F", "F#", "G", "Ab", "A", "Bb", "B"]
 chords = ["maj7", "min7", "7", "min7b5"]
 prev = []
 
@@ -34,7 +34,7 @@ def checkPrev(c):
     return True
 
 def playAudio(fullC):
-    fileString = "aplay " + fullC + ".wav"
+    fileString = "aplay " + "audiofiles/" + fullC + ".wav"
     os.system(fileString)
 
 
