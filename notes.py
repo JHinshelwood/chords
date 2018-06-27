@@ -34,11 +34,11 @@ def checkPrev(c):
     return True
 
 def playAudio(fullC):
-    fileString = "aplay " + "audiofiles/" + fullC + ".wav"
-    os.system(fileString)
+    command = "aplay " + "audiofiles/" + fullC + ".wav"
+    os.system(command)
 
 
-input("Press enter to generate a new chord...")
+input("Press enter to start...")
 
     
 while(True):
@@ -55,5 +55,5 @@ while(True):
     prev.append(c)
     print(c) 
     playAudio(c)
-    
+    signal.signal(signal.SIGINT, signal_handler)
    
